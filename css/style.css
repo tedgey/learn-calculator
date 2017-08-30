@@ -1,7 +1,11 @@
 body {
     font-size: 16px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    letter-spacing: 5px;
+}
+
+p {
+    display: block;
+    margin: 2em auto;
 }
 
 .u-center {
@@ -15,25 +19,26 @@ body {
 }
 
 .calculator {
-    font-size: 1.8rem;
-    padding: 20px;
-    margin: 0 auto;
-    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
     border-radius: 1px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    font-size: 1.8rem;
+    letter-spacing: 5px;
+    margin: 0 auto;
+    padding: 20px;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
     width: 29rem;
 }
 
 .input {
     border: 1px solid #ddd;
     border-radius: 1px;
+    font-size: 2.5rem;
     height: 60px;
-    padding-right: 15px;
+    margin-right: 6px;
+    overflow-x: auto;
+    padding-right: 1rem;
     padding-top: 10px;
     text-align: right;
-    margin-right: 6px;
-    font-size: 2.5rem;
-    overflow-x: auto;
     transition: all .2s ease-in-out;
 }
 
