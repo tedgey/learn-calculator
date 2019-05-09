@@ -6,16 +6,31 @@ const input = document.getElementById('input'), // input/output button
     result = document.getElementById('result'), // equal button
     clear = document.getElementById('clear'); // clear button
 
-let resultDisplayed = false, // flag to keep an eye on what output is displayed
-    currentString = input.innerHTML,
-    lastCharacter = currentString[currentString.length - 1];
+let resultDisplayed = false; // flag to keep an eye on what output is displayed
+    // currentString = input.innerHTML,
+    // lastCharacter = currentString[currentString.length - 1];
 
 // adding click handlers to number buttons
 
 number.forEach(function(number){
-    number.addEventListener('click', function(){
-        input.innerHTML += this.innerHTML
-    });
+    number.addEventListener('click', function(e) {
+        if (resultDisplayed === false) {
+        input.innerHTML += e.target.innerHTML;
+    } else if (
+        (resultDisplayed === true && lastCharacter === "+") ||
+        (resultDisplayed === true && lastCharacter === "-") ||
+        (resultDisplayed === true && lastCharacter === "*") ||
+        (resultDisplayed === true && lastCharacter === "/")
+    )
+        {
+        resultDisplayed = false;
+        input.innerHTML += e.target.innerHTML;
+} else {
+        resultDisplayed = false;
+        input.innerHTML = "";
+        input.innerHTML += e.target.innerHTML;
+    }
+});
 });
 
 // adding click handlers to the operation buttons and preventing double operators
