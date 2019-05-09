@@ -6,8 +6,7 @@ const input = document.getElementById('input'), // input/output button
     result = document.getElementById('result'), // equal button
     clear = document.getElementById('clear'); // clear button
 
-let resultDisplayed = false; // flag to keep an eye on what output is displayed
-
+let resultDisplayed = false;
 
 // adding click handlers to number buttons
 
@@ -15,23 +14,22 @@ number.forEach(function(number){
     number.addEventListener('click', function(e) {
         let currentString = input.innerHTML;
         let lastCharacter = currentString[currentString.length - 1];
+        
         if (resultDisplayed === false) {
         input.innerHTML += e.target.innerHTML;
-    } else if (
-        (resultDisplayed === true && lastCharacter === "+") ||
-        (resultDisplayed === true && lastCharacter === "-") ||
-        (resultDisplayed === true && lastCharacter === "*") ||
-        (resultDisplayed === true && lastCharacter === "/")
-    )
-        {
-        resultDisplayed = false;
-        input.innerHTML += e.target.innerHTML;
-} else {
-        resultDisplayed = false;
-        input.innerHTML = "";
-        input.innerHTML += e.target.innerHTML;
-    }
-});
+        }
+        else if (
+            resultDisplayed === true && lastCharacter === "+" || lastCharacter === "-" 
+            || lastCharacter === "*" || lastCharacter === "/"
+        ){
+            resultDisplayed = false;
+            input.innerHTML += e.target.innerHTML;
+        } else {
+            resultDisplayed = false;
+            input.innerHTML = "";
+            input.innerHTML += e.target.innerHTML;
+        }
+    });
 });
 
 // adding click handlers to the operation buttons and preventing double operators
@@ -49,7 +47,7 @@ operator.forEach(function(operator){
             input.innerHTML += e.target.innerHTML;
         }
     });
-});
+})
 
 // on click of 'equal' button
 
