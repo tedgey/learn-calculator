@@ -24,7 +24,7 @@ operator.forEach(function(operator){
     operator.addEventListener('click', function(e){
         let currentString = input.innerHTML;
         let lastCharacter = currentString[currentString.length - 1];
-        if (lastCharacter === "+" || lastCharacter === "-" || lastCharacter === "×" || lastCharacter === "÷") {
+        if (lastCharacter === "+" || lastCharacter === "-" || lastCharacter === "*" || lastCharacter === "/") {
             let newString = currentString.substring(0, currentString.length - 1) + e.target.innerHTML;
             input.innerHTML = newString;
         } else if (currentString.length == 0) {
